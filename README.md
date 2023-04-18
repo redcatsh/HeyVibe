@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+HeyVibe는 음악을 사랑하는 사람들이 서로의 취향을 공유하고 소통하며, 
+음악에 관련된 중고물품들을 거래할 수 있는 플랫폼입니다.
 
-## Getting Started
+## 메인
+![main-min](https://user-images.githubusercontent.com/110972285/232904332-ee41b3af-360c-4904-a9ec-22efda28ab1b.gif)
 
-First, run the development server:
+## 추천 플레이리스트
+Youtube API를 이용하여 특정 채널의 재생목록 데이터를 보여주게 하였습니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![playlist](https://user-images.githubusercontent.com/110972285/232916154-1affbd38-3774-45b8-bae4-8b0aab8ee952.gif)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 로그인
+![login](https://user-images.githubusercontent.com/110972285/232916512-73cad4be-07a8-47ab-96ba-8be658d670cd.gif)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 회원가입
+![join](https://user-images.githubusercontent.com/110972285/232916708-71b28c83-0d60-4757-9bde-5120f4091156.gif)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 추천 게시판 리스트
+![boardlist-pagination](https://user-images.githubusercontent.com/110972285/232916801-c20d3f61-6e14-41ba-905c-5d8a0b714952.gif)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 공유 게시판, 댓글
+![boardComments](https://user-images.githubusercontent.com/110972285/232915965-50d83709-b61c-4f67-b158-ee05d1ec532a.gif)
 
-## Learn More
+## 거래 상품 등록
+![product-write (1)](https://user-images.githubusercontent.com/110972285/232915557-c6ebdfe6-ca53-4248-91ba-c4da8183b896.gif)
 
-To learn more about Next.js, take a look at the following resources:
+## 상품과 게시물 검색
+![searchProduct](https://user-images.githubusercontent.com/110972285/232917102-6fc3a2e2-deea-4e33-8f0e-3a432989bb08.gif)
+![searchBoard](https://user-images.githubusercontent.com/110972285/232917171-be4143cb-937f-4316-b367-16431657ef7d.gif)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 상품 상세페이지
+![productDetail](https://user-images.githubusercontent.com/110972285/232917300-8837c3bc-a7c1-4469-b575-e74110389e9b.gif)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 상품 질문과 답변
+![comments](https://user-images.githubusercontent.com/110972285/232916966-ab69b6de-ca4e-44ff-8bf5-1bce13cef253.gif)
