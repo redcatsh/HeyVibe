@@ -5,6 +5,9 @@ HeyVibe는 음악을 사랑하는 사람들이 서로의 취향을 공유하고 
 
 ![main-min](https://user-images.githubusercontent.com/110972285/232904332-ee41b3af-360c-4904-a9ec-22efda28ab1b.gif)
 
-## 상품 등록
+## 공유 게시판, 
+![boardComments](https://user-images.githubusercontent.com/110972285/232915965-50d83709-b61c-4f67-b158-ee05d1ec532a.gif)
+
+## 거래 상품 등록
 ![product-write (1)](https://user-images.githubusercontent.com/110972285/232915557-c6ebdfe6-ca53-4248-91ba-c4da8183b896.gif)
 
