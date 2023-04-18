@@ -9,9 +9,11 @@ Youtube API를 이용하여 특정 채널의 재생목록 데이터를 보여주
 
 ![playlist](https://user-images.githubusercontent.com/110972285/232916154-1affbd38-3774-45b8-bae4-8b0aab8ee952.gif)
 
+## 로그인
+![login](https://user-images.githubusercontent.com/110972285/232916512-73cad4be-07a8-47ab-96ba-8be658d670cd.gif)
+
 ## 공유 게시판, 댓글
 ![boardComments](https://user-images.githubusercontent.com/110972285/232915965-50d83709-b61c-4f67-b158-ee05d1ec532a.gif)
 
 ## 거래 상품 등록
 ![product-write (1)](https://user-images.githubusercontent.com/110972285/232915557-c6ebdfe6-ca53-4248-91ba-c4da8183b896.gif)
-
