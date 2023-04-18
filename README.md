@@ -30,3 +30,6 @@ Youtube API를 이용하여 특정 채널의 재생목록 데이터를 보여주
 
 ## 상품 상세페이지
 ![productDetail](https://user-images.githubusercontent.com/110972285/232917300-8837c3bc-a7c1-4469-b575-e74110389e9b.gif)
+
+## 상품 질문과 답변
+![comments](https://user-images.githubusercontent.com/110972285/232916966-ab69b6de-ca4e-44ff-8bf5-1bce13cef253.gif)
