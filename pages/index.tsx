@@ -223,7 +223,7 @@ export default function FullPageExample() {
                 Share your Playlist!
               </H1>
               <P data-aos="fade-right" data-aos-delay="300">
-                Share your music and get recommendations.
+                Share your playlist and get recommendations.
               </P>
               <Link
                 data-aos="fade-right"
@@ -246,7 +246,7 @@ export default function FullPageExample() {
                 Share your Stuffs!
               </H1>
               <P data-aos="fade-right" data-aos-delay="300">
-                Share your music and get recommendations.
+                Share your stuffs and get recommendations.
               </P>
               <Link
                 data-aos="fade-right"
