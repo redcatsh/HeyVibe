@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from "next/router";
 const controlsProps = {
   style: {
     left: "50%",
@@ -124,13 +125,14 @@ const P = styled.p`
   margin-bottom: 50px;
 `;
 
-const Link = styled.a`
+const Link = styled.button`
   background-color: transparent;
   border: 1px solid #f2f2f2;
   outline: none;
   font-weight: 200;
   padding: 10px 30px;
   transition: all 0.3s;
+  cursor: pointer;
   color: #fff;
   &:hover {
     color: #fff;
@@ -163,6 +165,19 @@ const Stxt = styled.p`
 `;
 
 export default function FullPageExample() {
+  const router = useRouter();
+
+  const onClickToPlaylist = (ev) => {
+    router.push(`/playlist`);
+  };
+
+  const onClickToBoard = (ev) => {
+    router.push(`/board`);
+  };
+
+  const onClickToMarket = (ev) => {
+    router.push(`/products`);
+  };
   useEffect(() => {
     AOS.init();
   });
@@ -186,7 +201,11 @@ export default function FullPageExample() {
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link href="/playlist" data-aos="fade-right" data-aos-delay="300">
+              <Link
+                data-aos="fade-right"
+                data-aos-delay="300"
+                onClick={onClickToPlaylist}
+              >
                 Go to Playlist
               </Link>
             </InnerBox>
@@ -201,13 +220,17 @@ export default function FullPageExample() {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
               >
-                Share your Vibe!
+                Share your Playlist!
               </H1>
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link href="/playlist" data-aos="fade-right" data-aos-delay="300">
-                Go to Playlist
+              <Link
+                data-aos="fade-right"
+                data-aos-delay="300"
+                onClick={onClickToBoard}
+              >
+                Go to Recommend Board
               </Link>
             </InnerBox>
           </Box2>
@@ -220,13 +243,17 @@ export default function FullPageExample() {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
               >
-                Share your Vibe!
+                Share your Stuffs!
               </H1>
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link a="/playlist" data-aos="fade-right" data-aos-delay="300">
-                Go to Playlist
+              <Link
+                data-aos="fade-right"
+                data-aos-delay="300"
+                onClick={onClickToMarket}
+              >
+                Go to Market
               </Link>
             </InnerBox>
           </Box3>
