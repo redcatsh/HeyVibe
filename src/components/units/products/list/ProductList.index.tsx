@@ -134,7 +134,7 @@ export default function ProductList() {
                     <S.CardBottomLeft>
                       <S.UserBox>
                         <S.User />
-                        <S.CardWriter>{el.remarks}</S.CardWriter>
+                        <S.CardWriter>{el.seller?.name}</S.CardWriter>
                       </S.UserBox>
 
                       <S.CardDate>{getDate(el.createdAt)}</S.CardDate>

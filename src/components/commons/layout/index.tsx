@@ -12,7 +12,7 @@ interface IMyLayoutProps {
 }
 
 const HIDDEN_BANNERS = ["/", "/board"];
-const HIDDEN_FLOATING = ["/", "/board"];
+const HIDDEN_FLOATING = ["/", "/board", "/login", "/logout", "/join"];
 
 export default function MyLayout(props: IMyLayoutProps) {
   const router = useRouter();

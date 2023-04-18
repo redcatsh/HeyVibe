@@ -14,6 +14,7 @@ import {
   UPDATE_USED_ITEM,
   UPLOAD_FILE,
 } from "../../../../components/units/products/write/ProductWrite.queries";
+import { FETCH_USED_ITEMS } from "../list/ProductList.queries";
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import {
   Mutation,
@@ -142,6 +143,14 @@ export default function ProductWrite(props) {
             },
           },
         },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEMS,
+            variables: {
+              useditemId: router.query.productId,
+            },
+          },
+        ],
       });
       console.log(result);
       Modal.success({ content: "게시물이 등록되었습니다!" });
@@ -203,6 +212,7 @@ export default function ProductWrite(props) {
         },
       },
     };
+
     if (data.name) myvariables.updateUseditemInput.name = data.name;
     if (data.remarks) myvariables.updateUseditemInput.remarks = data.remarks;
     if (data.contents) myvariables.updateUseditemInput.contents = data.contents;
@@ -332,7 +342,7 @@ export default function ProductWrite(props) {
                     ""
                   }
                 />
-                <S.WidInput
+                {/* <S.WidInput
                   type="text"
                   placeholder="상세주소를 입력해주세요."
                   {...register("addressDetail")}
@@ -342,7 +352,7 @@ export default function ProductWrite(props) {
                         ?.addressDetail) ??
                     ""
                   }
-                />
+                /> */}
                 {isModalOpen && (
                   <Modal
                     open={true}

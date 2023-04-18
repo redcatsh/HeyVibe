@@ -55,7 +55,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
             ></S.ContentArea>
             <S.Error>{props.contentsEr}</S.Error>
           </S.ContentWrap>
-          <S.InputWrap>
+          {/* <S.InputWrap>
             <S.InputTitle>주소</S.InputTitle>
             <S.AddBox>
               <S.AddrInput
@@ -97,12 +97,12 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                 <DaumPostcodeEmbed onComplete={props.handleComplete} />
               </Modal>
             )}
-          </S.InputWrap>
+          </S.InputWrap> */}
           <S.InputWrap>
             <S.InputTitle>유튜브</S.InputTitle>
             <S.WidInput
               type="text"
-              placeholder="링크를 복사해주세요."
+              placeholder="링크를 입력하세요."
               onChange={props.ocYoutubeUrl}
               defaultValue={props.data?.fetchBoard.youtubeUrl}
             />
@@ -127,7 +127,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
               ></S.UploadHidden>
             </S.PhotoBox>
           </S.InputWrap>
-          <S.InputWrap>
+          {/* <S.InputWrap>
             <S.InputTitle>메인 설정</S.InputTitle>
             <S.RadioWrap>
               <S.RadioBox>
@@ -139,7 +139,7 @@ export default function BoardWriteUI(props: IBoardWriteUIProps) {
                 사진
               </S.RadioBox>
             </S.RadioWrap>
-          </S.InputWrap>
+          </S.InputWrap> */}
           <S.SubmitWrap>
             <S.SubmitBtn
               onClick={props.isEdit ? props.onClickUpdate : props.ocCheck}

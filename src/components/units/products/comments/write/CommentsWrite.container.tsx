@@ -103,9 +103,9 @@ export default function BoardCommentWrite(props: any) {
   // };
 
   const onClickSuccess = () => {
-    Modal.success({
-      content: "댓글이 등록되었습니다!",
-    });
+    // Modal.success({
+    //   content: "댓글이 등록되었습니다!",
+    // });
   };
 
   const onClickUpdateComment = () => {

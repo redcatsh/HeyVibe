@@ -20,7 +20,7 @@ export default function BoardDetailUI(props) {
               </S.CreateDate>
             </S.UserInfo>
           </S.BiLeft>
-          <S.BiRight>
+          {/* <S.BiRight>
             <S.LinkIcon />
             <Tooltip
               placement="topRight"
@@ -29,7 +29,7 @@ export default function BoardDetailUI(props) {
             >
               <S.LocationIcon />
             </Tooltip>
-          </S.BiRight>
+          </S.BiRight> */}
         </S.BoardInfo>
         <S.BoardBody>
           <S.BoardThumbnail>

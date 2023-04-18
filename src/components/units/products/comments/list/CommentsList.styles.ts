@@ -103,4 +103,9 @@ export const AnBox = styled.div`
   justify-content: space-between;
 `;
 
-export const Answer = styled.button``;
+export const Answer = styled.button`
+  background-color: transparent;
+  border: 1px solid #937c70;
+  font-size: 14px;
+  color: #2f2723;
+`;

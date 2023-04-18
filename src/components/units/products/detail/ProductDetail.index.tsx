@@ -10,7 +10,7 @@ import {
   TOGGLE_USED_ITEM_PICK,
 } from "./ProductDetail.queries";
 import Dompurify from "dompurify";
-import { useAuth } from "../../../commons/hooks/customs/useAuth";
+import SwiperImg from "./ProductSlider";
 import {
   IQuery,
   IQueryFetchUseditemArgs,
@@ -47,10 +47,10 @@ export default function ProductDetail() {
   const [createPointTransactionOfBuyingAndSelling] = useMutation(
     CREATE_POINT_TRANS_BUY_SELL
   );
-  const onClickDelete = async (ev) => {
+  const onClickDelete = async () => {
     await deleteUseditem({
       variables: {
-        useditemId: ev.target.id,
+        useditemId: String(router.query.productId),
       },
       refetchQueries: [{ query: FETCH_USED_ITEM }],
     });
@@ -134,7 +134,7 @@ export default function ProductDetail() {
       <S.Wrapper>
         <S.Inner>
           <S.PrdBox>
-            <S.PrdImage>
+            {/* <S.PrdImage>
               {data?.fetchUseditem.images
                 ?.filter((el: string) => el)
                 .map((el: string) => (
@@ -143,7 +143,8 @@ export default function ProductDetail() {
                     src={`https://storage.googleapis.com/${el}`}
                   />
                 ))}
-            </S.PrdImage>
+            </S.PrdImage> */}
+            <SwiperImg />
             <S.PrdInfo>
               <S.PrdTop>
                 <S.PrdName>{data?.fetchUseditem.name}</S.PrdName>

@@ -124,7 +124,7 @@ const P = styled.p`
   margin-bottom: 50px;
 `;
 
-const Link = styled.button`
+const Link = styled.a`
   background-color: transparent;
   border: 1px solid #f2f2f2;
   outline: none;
@@ -186,7 +186,7 @@ export default function FullPageExample() {
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link to="/playlist" data-aos="fade-right" data-aos-delay="300">
+              <Link href="/playlist" data-aos="fade-right" data-aos-delay="300">
                 Go to Playlist
               </Link>
             </InnerBox>
@@ -206,7 +206,7 @@ export default function FullPageExample() {
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link to="/playlist" data-aos="fade-right" data-aos-delay="300">
+              <Link href="/playlist" data-aos="fade-right" data-aos-delay="300">
                 Go to Playlist
               </Link>
             </InnerBox>
@@ -225,7 +225,7 @@ export default function FullPageExample() {
               <P data-aos="fade-right" data-aos-delay="300">
                 Share your music and get recommendations.
               </P>
-              <Link to="/playlist" data-aos="fade-right" data-aos-delay="300">
+              <Link a="/playlist" data-aos="fade-right" data-aos-delay="300">
                 Go to Playlist
               </Link>
             </InnerBox>

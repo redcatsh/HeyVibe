@@ -12,6 +12,7 @@ import {
   IQuery,
   IQueryFetchUseditemQuestionsArgs,
 } from "../../../../../commons/types/generated/types";
+import { FETCH_USED_ITEM } from "../../detail/ProductDetail.queries";
 
 export default function BoardCommentList() {
   const router = useRouter();
@@ -36,8 +37,14 @@ export default function BoardCommentList() {
         {
           query: FETCH_USEDITEM_QUESTIONS,
           variables: {
-            useditemId: router.query.productId,
+            useditemId: String(router.query.productId),
             page: Number(router.query.page),
+          },
+        },
+        {
+          query: FETCH_USED_ITEM,
+          variables: {
+            useditemId: String(router.query.productId),
           },
         },
       ],

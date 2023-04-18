@@ -15,15 +15,18 @@ export default function TodayViewedProduct() {
   }, [router]);
 
   const Wrapper = styled.div`
-    background-color: #fff;
-    border: 1px solid #000;
-    padding: 28px 30px;
+    background-color: #f1e1d9;
+    border: 1px solid #98847b;
+    padding: 12px 0px;
     position: fixed;
     top: 30%;
     right: 20px;
+    z-index: 2;
   `;
   const H5 = styled.h5`
     margin-bottom: 15px;
+    font-size: 13px;
+    text-align: center;
   `;
   const BoxWrap = styled.div`
     display: flex;

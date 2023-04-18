@@ -182,9 +182,10 @@ export const LinkIcon = styled(LinkOutlined)`
 `;
 
 export const BoardThumbnail = styled.div`
-  max-width: 80%;
-  margin: 30px auto;
   & > img {
-    width: 100%;
+    width: 40%;
+    margin-top: 30px;
+    height: 300px;
+    object-fit: cover;
   }
 `;

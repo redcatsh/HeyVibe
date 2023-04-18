@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 
 import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./BoardWrite.queries";
+import { FETCH_BOARDS } from "../../../commons/hooks/queries/useQuerytFetchBoards";
 import BoardWriteUI from "./BoardWrite.presenter";
 import {
   Mutation,
@@ -60,6 +61,14 @@ export default function RegisterBoardPage(props: IBoardWriteProps) {
             },
           },
         },
+        refetchQueries: [
+          {
+            query: FETCH_BOARDS,
+            variables: {
+              boardId: router.query.boardId,
+            },
+          },
+        ],
       });
       console.log(images);
       router.push(`/board/${myBoard.data?.createBoard._id}`);
