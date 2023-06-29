@@ -6,7 +6,7 @@ export default function CommentListUI(props: any) {
   return (
     <div>
       <InfiniteScrollPage fetchMore={props.fetchMore} data={props.data}>
-        {props.data?.fetchUseditemQuestions.map((el) => (
+        {props.data?.fetchUseditemQuestions.map((el: any) => (
           <CommentsListUIItem
             key={el._id}
             el={el}

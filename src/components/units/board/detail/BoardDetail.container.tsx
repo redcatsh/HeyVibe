@@ -8,7 +8,7 @@ import { LIKE_BOARD, DISLIKE_BOARD } from "./BoardDetail.queries";
 import BoardDetailUI from "./BoardDetail.presenter";
 
 import { FETCH_BOARDS } from "../list/BoardList.queries";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 export default function BoardDetail() {
   const router = useRouter();
 
@@ -28,10 +28,10 @@ export default function BoardDetail() {
 
   const [deleteBoard] = useMutation(DELETE_BOARD);
 
-  const onClickDelete = async (ev) => {
+  const onClickDelete = async (ev: MouseEvent<HTMLElement>) => {
     await deleteBoard({
       variables: {
-        boardId: ev.target.id,
+        boardId: (ev.target as HTMLElement).id,
       },
       refetchQueries: [{ query: FETCH_BOARD }],
     });

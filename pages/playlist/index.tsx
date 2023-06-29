@@ -1,5 +1,4 @@
 import { NextPage, InferGetServerSidePropsType, NextPageContext } from "next";
-import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 const YtHtmlView: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>

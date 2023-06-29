@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 const Wrapper = styled.div`
   min-height: calc(100vh - 80px);
@@ -23,7 +22,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export default function MyBody(props) {
+export default function MyBody(props: any) {
   const router = useRouter();
 
   return <Wrapper>{props.children}</Wrapper>;

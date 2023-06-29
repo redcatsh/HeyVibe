@@ -90,7 +90,7 @@ export default function ProductDetail() {
   const onClickPickToggle = async () => {
     await toggleUseditemPick({
       variables: {
-        useditemId: router.query.productId,
+        useditemId: String(router.query.productId),
       },
       refetchQueries: [
         {

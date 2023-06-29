@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "@apollo/client";
-import { useRef, useState, ChangeEvent } from "react";
+import { useRef, useState, ChangeEvent, MouseEvent } from "react";
 import { useRouter } from "next/router";
 import {
   IQuery,
@@ -20,11 +20,11 @@ import { v4 as uuidv4 } from "uuid";
 export default function BoardList() {
   const router = useRouter();
 
-  const onClickToWrite = (ev) => {
-    router.push(`/board/new/${ev.target.id}`);
+  const onClickToWrite = (ev: MouseEvent<HTMLButtonElement>) => {
+    router.push(`/board/new/${(ev.target as HTMLButtonElement).id}`);
   };
-  const onClickToDetail = (ev) => {
-    router.push(`/board/${ev.target.id}`);
+  const onClickToDetail = (ev: MouseEvent<HTMLElement>) => {
+    router.push(`/board/${(ev.target as HTMLElement).id}`);
   };
 
   const [likeBoard] = useMutation(LIKE_BOARD);
@@ -73,7 +73,7 @@ export default function BoardList() {
     });
   };
 
-  const onDefaultImg = (event) => {
+  const onDefaultImg = (event: any) => {
     event.target.src = defaultImg;
   };
 

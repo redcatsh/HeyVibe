@@ -64,8 +64,8 @@ export default function LoginUI() {
             placeholder="Password"
             onChange={onChangePassword}
           />
-          <S.CheckInput type="checkbox" id="autoLogin" />
-          <S.CheckLabel for="autoLogin">자동로그인</S.CheckLabel>
+          {/* <S.CheckInput type="checkbox" id="autoLogin" /> */}
+          {/* <S.CheckLabel for="autoLogin">자동로그인</S.CheckLabel> */}
           <S.Login onClick={onClickLogin}>로그인</S.Login>
           <S.Join>회원가입</S.Join>
           <S.Forgot>

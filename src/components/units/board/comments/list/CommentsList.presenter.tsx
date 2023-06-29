@@ -19,7 +19,7 @@ export default function CommentListUI(props: any) {
         </Modal>
       )}
       <InfiniteScrollPage fetchMore={props.fetchMore} data={props.data}>
-        {props.data?.fetchBoardComments.map((el) => (
+        {props.data?.fetchBoardComments.map((el: any) => (
           <CommentsListUIItem
             key={el._id}
             el={el}

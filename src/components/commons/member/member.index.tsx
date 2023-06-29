@@ -11,6 +11,12 @@ import { useState } from "react";
 import { IQuery } from "../../../commons/types/generated/types";
 import { useMutation, useQuery } from "@apollo/client";
 
+declare global {
+  interface Window {
+    IMP: any;
+  }
+}
+
 export default function MemberInfo() {
   const { data } =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
@@ -25,7 +31,7 @@ export default function MemberInfo() {
   const [createPointTransactionOfLoading] = useMutation(
     CREATE_POINT_TRANS_LOADING
   );
-  const onClickPayment = (data) => {
+  const onClickPayment = (data: any) => {
     // setIsOpen(true);
     console.log(data);
     const IMP = window.IMP; // 생략 가능

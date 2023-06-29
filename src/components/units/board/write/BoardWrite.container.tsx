@@ -73,7 +73,7 @@ export default function RegisterBoardPage(props: IBoardWriteProps) {
       console.log(images);
       router.push(`/board/${myBoard.data?.createBoard._id}`);
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: "다시 한번 확인해주세요." });
     }
   };
 

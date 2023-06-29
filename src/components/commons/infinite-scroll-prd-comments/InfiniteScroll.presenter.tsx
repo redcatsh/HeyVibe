@@ -1,6 +1,5 @@
 import InfiniteScroll from "react-infinite-scroller";
-import CommentsListUIItem from "../../units/board/comments/list/CommentsList.presenterItem";
-export default function InfiniteScrollUI(props) {
+export default function InfiniteScrollUI(props: any) {
   return (
     <div style={{ height: "500px", overflow: "auto" }}>
       <InfiniteScroll

@@ -2,7 +2,19 @@ import * as S from "./BoardList.styles";
 import Pagination01 from "../../../commons/pagination/01/Pagination01.container";
 import { getDate } from "../../../../commons/library/utils";
 import Dompurify from "dompurify";
-export default function BoardListUI(props) {
+import { MouseEvent } from "react";
+
+interface IList {
+  _id: string;
+  images: string;
+  title: string;
+  contents: string;
+  writer: string;
+  createdAt: string;
+  likeCount: string;
+}
+
+export default function BoardListUI(props: any) {
   return (
     <>
       <S.ListWrap>
@@ -21,7 +33,7 @@ export default function BoardListUI(props) {
       </S.RegBtnWrap>
       <S.TableWrapper>
         <S.CardWrap>
-          {props.data?.fetchBoards.map((el, index) => (
+          {props.data?.fetchBoards.map((el: IList, index: number) => (
             <S.Card key={el._id}>
               <S.CardLeft id={el._id} onClick={props.onClickToDetail}>
                 <img

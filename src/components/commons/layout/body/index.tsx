@@ -6,6 +6,6 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-export default function MyBody(props) {
+export default function MyBody(props: any) {
   return <Wrapper>{props.children}</Wrapper>;
 }

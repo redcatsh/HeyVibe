@@ -15,7 +15,14 @@ import {
   UPLOAD_FILE,
 } from "../../../../components/units/products/write/ProductWrite.queries";
 import { FETCH_USED_ITEMS } from "../list/ProductList.queries";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  KeyboardEvent,
+  MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   Mutation,
   MutationUpdateUseditemArgs,
@@ -65,26 +72,27 @@ const modules = {
   },
 };
 
-export default function ProductWrite(props) {
+export default function ProductWrite(props: any) {
   // TAG
-  const [tagItem, setTagItem] = useState("");
-  const [tagList, setTagList] = useState([]);
+  const [tagItem, setTagItem] = useState<string>("");
+  const [tagList, setTagList] = useState<string[]>([]);
 
-  const onKeyPress = (e) => {
-    if (e.target.value.length !== 0 && e.key === "Enter") {
-      submitTagItem(e.target.value);
+  const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.currentTarget.value.length !== 0 && e.key === "Enter") {
+      submitTagItem(e.currentTarget.value);
     }
   };
 
-  const submitTagItem = (value) => {
+  const submitTagItem = (value: string) => {
     let updatedTagList = [...tagList];
     updatedTagList.push(value);
     setTagList(updatedTagList);
     setTagItem("");
   };
 
-  const deleteTagItem = (e) => {
-    const deleteTagItem = e.target.parentElement.firstChild.innerText;
+  const deleteTagItem = (e: MouseEvent<HTMLButtonElement>) => {
+    const deleteTagItem =
+      e.currentTarget.parentElement?.firstChild?.textContent;
     const filteredTagList = tagList.filter(
       (tagItem) => tagItem !== deleteTagItem
     );
@@ -114,7 +122,7 @@ export default function ProductWrite(props) {
     void trigger("contents");
   };
 
-  const onClickSubmit = async (data) => {
+  const onClickSubmit = async (data: any) => {
     const results = await Promise.all(
       files.map(async (el) =>
         el !== undefined
@@ -156,7 +164,7 @@ export default function ProductWrite(props) {
       Modal.success({ content: "게시물이 등록되었습니다!" });
       void router.push(`/products/${result.data?.createUseditem._id}`);
     } catch (error) {
-      Modal.error({ content: error.message });
+      Modal.error({ content: "다시 한번 확인해주세요." });
     }
   };
 
@@ -186,7 +194,7 @@ export default function ProductWrite(props) {
     MutationUpdateUseditemArgs
   >(UPDATE_USED_ITEM);
 
-  const onClickUpdate = async (data) => {
+  const onClickUpdate = async (data: any) => {
     const results = await Promise.all(
       files.map(async (el) =>
         el !== undefined
@@ -231,7 +239,7 @@ export default function ProductWrite(props) {
     setIsModalOpen((prev) => !prev);
   };
 
-  const handleComplete = (data) => {
+  const handleComplete = (data: any) => {
     setValue("address", data.address);
     setValue("addressDetail", data.addressDetail);
     onToggleModal();

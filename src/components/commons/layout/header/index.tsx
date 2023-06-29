@@ -151,7 +151,7 @@ export default function MyHeader() {
       router.push("/");
       location.reload();
     } catch (error) {
-      Modal.error(error.message);
+      Modal.error({ content: "다시 한번 확인해주세요." });
     }
   };
   const { data } =

@@ -28,30 +28,33 @@ export default function Map(props: any) {
         const geocoder = new window.kakao.maps.services.Geocoder();
         // 주소로 좌표를 검색합니다
         console.log(`${props.Address}`);
-        geocoder.addressSearch(`${props.Address}`, function (result, status) {
-          // 정상적으로 검색이 완료됐으면
-          if (status === window.kakao.maps.services.Status.OK) {
-            const coords = new window.kakao.maps.LatLng(
-              result[0].y,
-              result[0].x
-            );
+        geocoder.addressSearch(
+          `${props.Address}`,
+          function (result: any, status: any) {
+            // 정상적으로 검색이 완료됐으면
+            if (status === window.kakao.maps.services.Status.OK) {
+              const coords = new window.kakao.maps.LatLng(
+                result[0].y,
+                result[0].x
+              );
 
-            // 결과값으로 받은 위치를 마커로 표시합니다
-            const marker = new window.kakao.maps.Marker({
-              map: map,
-              position: coords,
-            });
+              // 결과값으로 받은 위치를 마커로 표시합니다
+              const marker = new window.kakao.maps.Marker({
+                map: map,
+                position: coords,
+              });
 
-            // 인포윈도우로 장소에 대한 설명을 표시합니다
-            const infowindow = new window.kakao.maps.InfoWindow({
-              content: `<div style="width:150px;text-align:center;padding:6px 0;">${props.Address}</div>`,
-            });
-            infowindow.open(map, marker);
+              // 인포윈도우로 장소에 대한 설명을 표시합니다
+              const infowindow = new window.kakao.maps.InfoWindow({
+                content: `<div style="width:150px;text-align:center;padding:6px 0;">${props.Address}</div>`,
+              });
+              infowindow.open(map, marker);
 
-            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-            map.setCenter(coords);
+              // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+              map.setCenter(coords);
+            }
           }
-        });
+        );
 
         //////////////////////////////////////////////////////////
         const marker = new window.kakao.maps.Marker({
@@ -66,7 +69,7 @@ export default function Map(props: any) {
         window.kakao.maps.event.addListener(
           map,
           "click",
-          function (mouseEvent) {
+          function (mouseEvent: any) {
             // 클릭한 위도, 경도 정보를 가져옵니다
             let latlng = mouseEvent.latLng;
 

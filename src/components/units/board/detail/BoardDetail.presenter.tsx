@@ -4,7 +4,8 @@ import ReactPlayer from "react-player";
 import { getDate } from "../../../../commons/library/utils";
 import { Tooltip } from "antd";
 import Dompurify from "dompurify";
-export default function BoardDetailUI(props) {
+import { AnyObject } from "yup/lib/types";
+export default function BoardDetailUI(props: any) {
   return (
     <S.WrapperBox>
       <S.Wrapper>

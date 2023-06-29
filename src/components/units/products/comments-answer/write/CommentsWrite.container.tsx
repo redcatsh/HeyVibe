@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { Rate } from "antd";
@@ -42,7 +42,7 @@ export default function ProductQuestionAnswer(props: any) {
       onClickSuccess();
       props.setIsAnswer(false);
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: "다시 확인해주세요." });
     }
     setContents("");
   };
@@ -50,8 +50,8 @@ export default function ProductQuestionAnswer(props: any) {
   // function onChangeUser(event) {
   //   setUser(event.target.value);
   // }
-  function onChangeContents(event) {
-    setContents(event.target.value);
+  function onChangeContents(event: MouseEvent<HTMLTextAreaElement>) {
+    setContents((event.target as HTMLTextAreaElement).value);
   }
 
   function checkComment() {
@@ -99,7 +99,7 @@ export default function ProductQuestionAnswer(props: any) {
       onClickUpdateComment();
       props.setIsEdit?.(false);
     } catch (error) {
-      alert(error.message);
+      Modal.error({ content: "다시 확인해주세요." });
     }
   };
 
