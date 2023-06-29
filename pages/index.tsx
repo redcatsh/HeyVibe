@@ -5,14 +5,17 @@ import { keyframes } from "@emotion/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRouter } from "next/router";
-const controlsProps = {
-  style: {
-    left: "50%",
-    paddingTop: "10px",
-    position: "fixed",
-    transform: "translateX(-50%)",
-  },
-};
+import { MouseEvent } from "react";
+
+// const controlsProps = {
+//   style: {
+//     left: "50%",
+//     paddingTop: "10px",
+//     position: "fixed",
+//     transform: "translateX(-50%)",
+//     display: "none",
+//   },
+// };
 
 const slideDuration = {
   duration: 1200,
@@ -167,15 +170,15 @@ const Stxt = styled.p`
 export default function FullPageExample() {
   const router = useRouter();
 
-  const onClickToPlaylist = (ev) => {
+  const onClickToPlaylist = (ev: MouseEvent<HTMLButtonElement>) => {
     router.push(`/playlist`);
   };
 
-  const onClickToBoard = (ev) => {
+  const onClickToBoard = (ev: MouseEvent<HTMLButtonElement>) => {
     router.push(`/board`);
   };
 
-  const onClickToMarket = (ev) => {
+  const onClickToMarket = (ev: MouseEvent<HTMLButtonElement>) => {
     router.push(`/products`);
   };
   useEffect(() => {
@@ -183,7 +186,7 @@ export default function FullPageExample() {
   });
   return (
     <>
-      <FullPage controls controlsProps={controlsProps} {...slideDuration}>
+      <FullPage {...slideDuration}>
         <Scroll>
           <Mouse src="/mouse.png"></Mouse>
           <Stxt>SCROLL</Stxt>

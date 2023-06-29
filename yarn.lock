@@ -1982,6 +1982,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/aos@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@types/aos@npm:3.0.4"
+  checksum: 55c54865df6e0758a32c8ab9a617b63318e0d8a7f7f0b6d02747aa541aa2638e3fd57a8d6f3a4277fcf9a0bffabf9d4e8c95b1d7b54f88859a85fbbd7e10bf2a
+  languageName: node
+  linkType: hard
+
 "@types/apollo-upload-client@npm:^17.0.2":
   version: 17.0.2
   resolution: "@types/apollo-upload-client@npm:17.0.2"
@@ -4878,6 +4885,7 @@ __metadata:
     "@graphql-codegen/typescript": ^2.8.1
     "@hookform/resolvers": ^2.9.10
     "@material-ui/core": ^4.12.4
+    "@types/aos": ^3.0.4
     "@types/apollo-upload-client": ^17.0.2
     "@types/dompurify": ^2.4.0
     "@types/lodash": ^4.14.190

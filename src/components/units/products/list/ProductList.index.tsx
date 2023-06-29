@@ -1,8 +1,7 @@
 import * as S from "../../../../components/units/products/list/ProductList.styles";
-import Pagination01 from "../../../../components/commons/pagination/01/Pagination01.container";
 import { getDate } from "../../../../commons/library/utils";
 import { useMutation, useQuery } from "@apollo/client";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, MouseEvent } from "react";
 import { useRouter } from "next/router";
 import InfiniteScrollPage from "../../../../components/commons/infinite-scroll-product/InfiniteScroll.container";
 import {
@@ -11,14 +10,12 @@ import {
   IQueryFetchUseditemsArgs,
   Mutation,
   MutationToggleUseditemPickArgs,
-  Useditem,
 } from "../../../../commons/types/generated/types";
 import {
   FETCH_USED_ITEMS,
   TOGGLE_USED_ITEM_PICK,
 } from "../../../../components/units/products/list/ProductList.queries";
-import Dompurify from "dompurify";
-import defaultImg from "../../../../../public/music1.jpg";
+
 import _ from "lodash";
 import { v4 as uuidv4 } from "uuid";
 import { Modal } from "antd";
@@ -26,17 +23,17 @@ import { Modal } from "antd";
 export default function ProductList() {
   const router = useRouter();
 
-  const onClickToWrite = (ev) => {
-    router.push(`/products/new/${ev.target.id}`);
+  const onClickToWrite = (ev: MouseEvent) => {
+    router.push(`/products/new/${ev.currentTarget.id}`);
   };
-  const onClickToDetail = (ev) => {
-    router.push(`/products/${ev.target.id}`);
+  const onClickToDetail = (ev: MouseEvent) => {
+    router.push(`/products/${ev.currentTarget.id}`);
   };
   const [toggleUseditemPick] = useMutation<
     Pick<Mutation, "toggleUseditemPick">,
     MutationToggleUseditemPickArgs
   >(TOGGLE_USED_ITEM_PICK);
-  const onClickPickToggle = async (ev) => {
+  const onClickPickToggle = async (ev: MouseEvent) => {
     await toggleUseditemPick({
       variables: {
         useditemId: ev.currentTarget.id,
@@ -62,10 +59,6 @@ export default function ProductList() {
     getDebounce(event.currentTarget.value);
   };
   const mySecretCode = uuidv4();
-
-  const onDefaultImg = (event) => {
-    event.target.src = defaultImg;
-  };
 
   const { data, fetchMore, refetch } = useQuery<
     Pick<IQuery, "fetchUseditems">,
@@ -93,7 +86,7 @@ export default function ProductList() {
                 <S.CardLeft id={el._id} onClick={onClickToDetail}>
                   <img
                     id={el._id}
-                    src={`https://storage.googleapis.com/${el.images[0]}`}
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
                     onError={({ currentTarget }) => {
                       currentTarget.onerror = null; // prevents looping
                       currentTarget.src = "/music5.jpg";

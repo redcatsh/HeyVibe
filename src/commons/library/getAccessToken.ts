@@ -1,4 +1,3 @@
-import { Modal } from "antd";
 import { gql, GraphQLClient } from "graphql-request";
 
 const RESTORE_ACCESS_TOKEN = gql`
